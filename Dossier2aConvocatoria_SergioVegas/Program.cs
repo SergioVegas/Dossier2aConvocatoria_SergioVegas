@@ -7,7 +7,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici9();
+            Exercici11();
         }
         //7. Implementa un programa en C# que demani un nombre enter positiu i mostri tots els seus divisors parells. Utilitza la interpolació de cadenes per mostrar el resultat.
         public static void Exercici7()
@@ -83,16 +83,37 @@ namespace Dossier2aConvocatoria_SergioVegas
             const string MsgResult = "El resultat és: {0}";
             const string MsgFormatError = "Error de format";
 
-            int userNumb = 10; //Faltaba punt y coma
+            int userNumb = 10; //Faltaba punt y coma. ; expected
             string userNumbString = "20";
             int userNumb2 = 0;
 
-            if (int.TryParse(y, out userNumb2)) //TryParse per gestionar errors
+            if (int.TryParse(userNumbString, out userNumb2)) //TryParse per gestionar errors
             {
-                int result = userNumb + userNumb2; //Aquesta operació no es podia fer perquè la varibale y és un string.
+                int result = userNumb + userNumb2; //Aquesta operació no es podia fer perquè la varibale y és un string. Cannot implicitly convert type 'string' to 'int'
                 Console.WriteLine(MsgResult, result); //Aquest missatge no esta en un format correcte, ademés que per millorar el codi ha de ser una constant.
             }
             else { throw new  FormatException(MsgFormatError); }
+        }
+        /*11. Analitza el següent codi i proposa maneres d'optimitzar-lo:
+                for(int i = 0; i< 100; i++) {
+                    if(i % 2 == 0) {
+                    Console.WriteLine(i + " és parell");
+                    }
+                }*/
+        public static void Exercici11()
+        {
+            const string MsgResult = "{0} és parell.";
+            const int Even = 2;
+            const int LastNumber = 100; //Constant si sempre serà 100, si volem donar l'opció a l'usuari ha de ser una variable.
+
+            //Una opció per millorar el rendiment del codi, seria fer l'increment de 2 en 2, ja que sabem que tots serian parells.
+            for (int i = 0; i < LastNumber; i+=2)
+            {
+                if (i % Even == 0)
+                {
+                    Console.WriteLine(MsgResult, i); //Canviar la concatenació i fer una constant amb el string que utiltzarem.
+                }
+            }
         }
     }
 }
