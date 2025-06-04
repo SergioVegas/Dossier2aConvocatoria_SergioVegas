@@ -5,7 +5,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici8();
+            Exercici9();
         }
         //7. Implementa un programa en C# que demani un nombre enter positiu i mostri tots els seus divisors parells. Utilitza la interpolació de cadenes per mostrar el resultat.
         public static void Exercici7()
@@ -51,6 +51,24 @@ namespace Dossier2aConvocatoria_SergioVegas
                 amount += userNumb;
             }
             Console.WriteLine(MsgAverage, amount / userQuantityNumbers);          
+        }
+        //9. Selecciona dues expressions de l'exercici 4 i mostra com es podrien analitzar mitjançant l'eina de depuració de Visual Studio, incloent captures de pantalla de les finestres Watch.
+        // Si x=4, y=7, p=true i q=false, avalua les expressions següents:
+
+        public static void Exercici9()
+        {
+            // a) y > x && p == q → TRUE AND FALSE→ FALSE
+            int x = 4;
+            int y = 7;
+            bool p = true;
+            bool q = false;
+
+            if (y > x && p == q) { Console.WriteLine("True");}
+            else  { Console.WriteLine("False");}
+
+            // b) (x + y) % 3 == 0 || p != q → FALSE OR TRUE → TRUE
+            if ((x + y) % 3 == 0 || p != q) { Console.WriteLine("True"); }
+            else { Console.WriteLine("False"); }
         }
     }
 }
