@@ -1,4 +1,6 @@
 ﻿using Dossier2aConvocatoria_SergioVegas.Tools;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Dossier2aConvocatoria_SergioVegas
 {
     public class Program
@@ -54,7 +56,6 @@ namespace Dossier2aConvocatoria_SergioVegas
         }
         //9. Selecciona dues expressions de l'exercici 4 i mostra com es podrien analitzar mitjançant l'eina de depuració de Visual Studio, incloent captures de pantalla de les finestres Watch.
         // Si x=4, y=7, p=true i q=false, avalua les expressions següents:
-
         public static void Exercici9()
         {
             // a) y > x && p == q → TRUE AND FALSE→ FALSE
@@ -69,6 +70,29 @@ namespace Dossier2aConvocatoria_SergioVegas
             // b) (x + y) % 3 == 0 || p != q → FALSE OR TRUE → TRUE
             if ((x + y) % 3 == 0 || p != q) { Console.WriteLine("True"); }
             else { Console.WriteLine("False"); }
+        }
+        
+        /*10. Donat el següent fragment de codi C# amb errors:
+            int x = 10
+            string y = "20";
+            int z = x + y;
+            Console.WriteLine("El resultat és: " z);*/
+        public static void Exercici10()
+        {
+            //En general canviar els noms per fer més llegible el codi
+            const string MsgResult = "El resultat és: {0}";
+            const string MsgFormatError = "Error de format";
+
+            int userNumb = 10; //Faltaba punt y coma
+            string userNumbString = "20";
+            int userNumb2 = 0;
+
+            if (int.TryParse(y, out userNumb2)) //TryParse per gestionar errors
+            {
+                int result = userNumb + userNumb2; //Aquesta operació no es podia fer perquè la varibale y és un string.
+                Console.WriteLine(MsgResult, result); //Aquest missatge no esta en un format correcte, ademés que per millorar el codi ha de ser una constant.
+            }
+            else { throw new  FormatException(MsgFormatError); }
         }
     }
 }
