@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici16();
+            Exercici17();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -279,8 +279,32 @@ namespace Dossier2aConvocatoria_SergioVegas
 
             double num = CheckInputs.CheckNumberRange( 0, 100);
         }
+        //17. Demana 10 números per teclat, guarda'ls en un array i després demana un número a buscar. El programa ha de dir si aquest número es troba a l'array i en quina posició.
         public static void Exercici17()
         {
+            const string MsgEx17 = "Introdueix 10 numeros i despres introdueix el numero que vulguis trobar.";
+            const int NumCount = 10;
+            int[] numbers = new int[NumCount];
+
+            Console.WriteLine(MsgEx17);
+            for (int i = 0; i < numbers.Length; i++) 
+            {
+                Console.Write($"Número{i+1}: ");
+                numbers[i] = CheckInputs.CheckValidNumber();
+            }
+            Console.WriteLine("Quin numero vols trobar?");
+
+            int userNumbFind = CheckInputs.CheckValidNumber();
+            int position = Array.IndexOf(numbers, userNumbFind);
+
+            if (position != -1)
+            {
+                Console.WriteLine($"El número {userNumbFind} es troba a la posició {position} de l'array.");
+            }
+            else
+            {
+                Console.WriteLine($"El número {userNumbFind} no es troba a l'array.");
+            }
         }
         public static void Exercici18()
         {
