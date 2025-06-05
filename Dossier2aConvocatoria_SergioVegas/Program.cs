@@ -306,8 +306,28 @@ namespace Dossier2aConvocatoria_SergioVegas
                 Console.WriteLine($"El número {userNumbFind} no es troba a l'array.");
             }
         }
+        /*18. Crea un programa que:
+            Demani 5 paraules i les guardi en un array
+            Mostri les paraules en ordre invers
+         */
         public static void Exercici18()
         {
+            const int WordCount = 5;
+            string[] words = new string[WordCount];
+
+            Console.WriteLine("Introdueix 5 paraules:");
+
+            for (int i = 0; i < WordCount; i++)
+            {
+                Console.Write($"Paraula {i + 1}: ");
+                words[i] = Console.ReadLine();
+            }
+
+            Console.WriteLine("\nParaules en ordre invers:");
+            for (int i = WordCount - 1; i >= 0; i--)
+            {
+                Console.WriteLine(words[i]);
+            }
         }
         public static void Exercici19()
         {
