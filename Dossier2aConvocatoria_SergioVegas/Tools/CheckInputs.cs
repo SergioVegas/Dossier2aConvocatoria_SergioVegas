@@ -9,6 +9,7 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
     public class CheckInputs
     {
         const string MsgErrorFormatNumber = "Format incorrecte. Introdueix un numero.";
+        const string MsgErrorOverflow = "El numero introduit es massa gran.";
         const string MsgErrorFormatDate = "Format incorrecte. Introdueix una data dd/MM/yyyy.";
         const string MsgErrorNegative= "El numero no pot ser menor a 0.";
         const string MsgIsOdd = "El numero és senar.";
@@ -27,6 +28,7 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
                     isCorrectFormat = true;
                 }
                 catch (FormatException) { Console.WriteLine(MsgErrorFormatNumber); }
+                catch (OverflowException) { Console.WriteLine(MsgErrorOverflow); }
             }
             return userNumb;
         }
@@ -43,6 +45,7 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
                     isCorrectFormat = true;
                 }
                 catch (FormatException) { Console.WriteLine(MsgErrorFormatNumber); }
+                catch (OverflowException) { Console.WriteLine(MsgErrorOverflow); }
             }
             return userNumb;
         }
@@ -66,6 +69,7 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
                    
                 }
                 catch (FormatException) { Console.WriteLine(MsgErrorFormatNumber); }
+                catch (OverflowException) { Console.WriteLine(MsgErrorOverflow); }
             }
             return userNumb;
         }
@@ -88,6 +92,7 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
 
                 }
                 catch (FormatException) { Console.WriteLine(MsgErrorFormatNumber); }
+                catch (OverflowException) { Console.WriteLine(MsgErrorOverflow); }
             }
             return userNumb;
         }
@@ -130,6 +135,7 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
 
                 }
                 catch (FormatException) { Console.WriteLine(MsgErrorFormatNumber); }
+                catch (OverflowException) { Console.WriteLine(MsgErrorOverflow); }
             }
             return userNumb;
         }

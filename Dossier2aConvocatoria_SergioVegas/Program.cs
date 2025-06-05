@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici17();
+            Exercici19();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -329,7 +329,35 @@ namespace Dossier2aConvocatoria_SergioVegas
                 Console.WriteLine(words[i]);
             }
         }
+        //19. Fes un programa que demani un número enter i calculi la suma dels seus dígits.
         public static void Exercici19()
+        {
+
+            Console.Write("Introdueix un número enter: ");
+            int userNumb = CheckInputs.CheckValidNumber();
+
+            int sum = SumDigits(userNumb);
+            Console.WriteLine($"La suma dels dígits de {userNumb} és: {sum}");
+        }
+        static int SumDigits(int userNumb)
+        {
+            int sum = 0;
+
+            while (userNumb != 0)
+            {
+                sum += userNumb % 10; // Agafa l'últim dígit
+                userNumb /= 10; // Redueix el número eliminant l'últim dígit
+            }
+
+            return sum;
+        }
+        public static void Exercici20()
+        {
+        }
+        public static void Exercici21()
+        {
+        }
+        public static void Exercici22()
         {
         }
 
