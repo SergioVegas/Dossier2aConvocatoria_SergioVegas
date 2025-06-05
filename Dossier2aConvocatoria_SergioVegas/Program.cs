@@ -1,5 +1,6 @@
 ﻿using Dossier2aConvocatoria_SergioVegas.Tools;
 using System;
+using System.Text.RegularExpressions;
 
 namespace Dossier2aConvocatoria_SergioVegas
 {
@@ -7,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici6();
+            Exercici9();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -140,7 +141,42 @@ namespace Dossier2aConvocatoria_SergioVegas
                 Console.WriteLine($"S'ha produït un error inesperat: {ex.Message}");
             }
         }
+        /* 9. Implementa una funció que comprovi que una contrasenya:
+                 Té entre 8 i 12 caràcters
+                 Inclou almenys una majúscula, una minúscula i un número
+                 No contingui espais*/
         public static void Exercici9()
+        {
+            Console.Write("Introdueix una contrasenya:\nHa de tenir entre 8 i 12 caràcters \nIncloré almenys una majúscula, una minúscula i un número i no pot tenir espais.\n");
+            string password = Console.ReadLine();
+
+            if (ValidatePassword(password))
+                Console.WriteLine("La contrasenya és vàlida!");
+            else
+                Console.WriteLine("La contrasenya no compleix els requisits.");
+        }
+        static bool ValidatePassword(string password)
+        {
+            if (password.Length < 8 || password.Length > 12)
+                return false; // Comprova la longitud
+
+            bool hasUpper = false, hasLower = false, hasDigit = false;
+
+            foreach (char c in password)
+            {
+                if (char.IsUpper(c)) hasUpper = true;
+                if (char.IsLower(c)) hasLower = true;
+                if (char.IsDigit(c)) hasDigit = true;
+            }
+            if (password.Contains(" "))
+                return false; // Comprova que no hi ha espais
+
+            return hasUpper && hasLower && hasDigit; ; 
+        }
+        public static void Exercici10()
+        {
+        }
+        public static void Exercici11()
         {
         }
     }
