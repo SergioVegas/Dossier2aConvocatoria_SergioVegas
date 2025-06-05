@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici14();
+            Exercici16();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -270,8 +270,14 @@ namespace Dossier2aConvocatoria_SergioVegas
         {
             return number * number;
         }
+        //16. Fes un programa que demani un número entre 1 i 100. Si l'usuari introdueix un número fora d'aquest rang o un valor no numèric, torni a demanar-lo fins que sigui correcte.
         public static void Exercici16()
         {
+            const int MinRange = 1;
+            const int MaxRange = 100;
+            Console.Write("Introdueix un número en el rang de 1 i 100 inlcosos: ");
+
+            double num = CheckInputs.CheckNumberRange( 0, 100);
         }
         public static void Exercici17()
         {

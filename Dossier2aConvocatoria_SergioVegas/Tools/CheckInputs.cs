@@ -12,6 +12,7 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
         const string MsgErrorFormatDate = "Format incorrecte. Introdueix una data dd/MM/yyyy.";
         const string MsgErrorNegative= "El numero no pot ser menor a 0.";
         const string MsgIsOdd = "El numero és senar.";
+        const string MsgIsInRange = "El numero esta dintre del rang {0}-{1}.";
         const string MsgIsEven = "El numero és parell";
         public static int CheckValidNumber()
         {
@@ -70,7 +71,6 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
         }
         public static double CheckValidDecimalNumberNoNegative()
         {
-
             bool isCorrectFormat = false;
             double userNumb = 0;
 
@@ -109,6 +109,29 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
                 catch (FormatException) { Console.WriteLine(MsgErrorFormatDate); }
             }
             return userDate;
+        }
+        public static double CheckNumberRange(int minRange, int maxRange)
+        {
+            bool isInRange = false;
+            double userNumb = 0;
+
+            while (!isInRange)
+            {
+                try
+                {
+                    userNumb = int.Parse(Console.ReadLine());
+
+                    if (userNumb >= minRange && userNumb <= maxRange)
+                    {
+                        isInRange = true;
+                        Console.WriteLine(MsgIsInRange, minRange, maxRange);
+                    }
+                    else { Console.WriteLine("Fora del rang, torna a intentar-ho"); }
+
+                }
+                catch (FormatException) { Console.WriteLine(MsgErrorFormatNumber); }
+            }
+            return userNumb;
         }
         public static bool NumberIsPrime(int n)
         {
