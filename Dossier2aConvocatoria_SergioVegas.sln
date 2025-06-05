@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dossier2aConvocatoria_SergioVegas", "Dossier2aConvocatoria_SergioVegas\Dossier2aConvocatoria_SergioVegas.csproj", "{643356BF-33A0-4A0D-9245-123E55F5C8E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercici23", "Exercici23\Exercici23.csproj", "{CA8B4A49-231E-4496-83B5-7A73922BAA92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{643356BF-33A0-4A0D-9245-123E55F5C8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{643356BF-33A0-4A0D-9245-123E55F5C8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{643356BF-33A0-4A0D-9245-123E55F5C8E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA8B4A49-231E-4496-83B5-7A73922BAA92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8B4A49-231E-4496-83B5-7A73922BAA92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8B4A49-231E-4496-83B5-7A73922BAA92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8B4A49-231E-4496-83B5-7A73922BAA92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

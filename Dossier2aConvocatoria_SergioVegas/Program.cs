@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace Dossier2aConvocatoria_SergioVegas
 {
-    public class Program
+    public static class Program
     {
         static void Main(string[] args)
         {
@@ -33,7 +33,7 @@ namespace Dossier2aConvocatoria_SergioVegas
             if (userNumb <= 1) return 1;
             return userNumb * FactorialRecursiu(userNumb - 1);
         }
-       
+
         //6. Demana 10 números a l’usuari, desa'ls en un array, mostra la mitjana i quants valors són parells i quants no ho són.
         public static void Exercici6()
         {
@@ -171,7 +171,7 @@ namespace Dossier2aConvocatoria_SergioVegas
             if (password.Contains(" "))
                 return false; // Comprova que no hi ha espais
 
-            return hasUpper && hasLower && hasDigit; ; 
+            return hasUpper && hasLower && hasDigit; ;
         }
         //10.Comprova que una cadena tingui 8 dígits seguits d’una lletra (no cal validar la lletra final).
         public static void Exercici10()
@@ -181,7 +181,7 @@ namespace Dossier2aConvocatoria_SergioVegas
             Console.WriteLine(MsgEx10);
             string input = Console.ReadLine();
 
-            Console.WriteLine(ValidateFormat(input) ? "Correcte!": ""); 
+            Console.WriteLine(ValidateFormat(input) ? "Correcte!" : "");
         }
         static bool ValidateFormat(string input)
         {
@@ -194,14 +194,14 @@ namespace Dossier2aConvocatoria_SergioVegas
             {
                 if (!char.IsDigit(input[i])) { Console.WriteLine(MsgIncorrectDigit); return false; }
             }
-            return true; 
+            return true;
         }
         //11. Demana a l’usuari una data en format dd/MM/yyyy. Mostra si és una data vàlida i en quin dia de la setmana cau.
         public static void Exercici11()
         {
-           const string MsgEx11 = "Introdueix una data en format dd/MM/yyyy i et dire quin dia de la setmana és";
-           Console.WriteLine(MsgEx11);
-           Console.WriteLine( CheckInputs.CheckValidDate().DayOfWeek);
+            const string MsgEx11 = "Introdueix una data en format dd/MM/yyyy i et dire quin dia de la setmana és";
+            Console.WriteLine(MsgEx11);
+            Console.WriteLine(CheckInputs.CheckValidDate().DayOfWeek);
         }
         /*12. Fes un programa que demani un número i digui si és:
             Positiu, negatiu o zero
@@ -277,7 +277,7 @@ namespace Dossier2aConvocatoria_SergioVegas
             const int MaxRange = 100;
             Console.Write("Introdueix un número en el rang de 1 i 100 inlcosos: ");
 
-            double num = CheckInputs.CheckNumberRange( 0, 100);
+            double num = CheckInputs.CheckNumberRange(0, 100);
         }
         //17. Demana 10 números per teclat, guarda'ls en un array i després demana un número a buscar. El programa ha de dir si aquest número es troba a l'array i en quina posició.
         public static void Exercici17()
@@ -287,9 +287,9 @@ namespace Dossier2aConvocatoria_SergioVegas
             int[] numbers = new int[NumCount];
 
             Console.WriteLine(MsgEx17);
-            for (int i = 0; i < numbers.Length; i++) 
+            for (int i = 0; i < numbers.Length; i++)
             {
-                Console.Write($"Número{i+1}: ");
+                Console.Write($"Número{i + 1}: ");
                 numbers[i] = CheckInputs.CheckValidNumber();
             }
             Console.WriteLine("Quin numero vols trobar?");
@@ -442,6 +442,10 @@ namespace Dossier2aConvocatoria_SergioVegas
                     Console.WriteLine($"Correcte! Has encertat en {attempts} intents.");
             }
         }
-
+        //23. Implementa i testeja amb MsTest una funció IsEven(int num) que retorni true si és parell i false en cas contrari.
+        public static bool IsEven(int num)
+        {
+            return num % 2 == 0;
+        }
     }
 }
