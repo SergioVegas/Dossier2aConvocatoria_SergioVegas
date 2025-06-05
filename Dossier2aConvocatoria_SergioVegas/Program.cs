@@ -376,8 +376,42 @@ namespace Dossier2aConvocatoria_SergioVegas
             Console.WriteLine($"El número més petit és: {minNumber}");
             Console.WriteLine($"La mitjana dels números és: {average}");
         }
+        // 21. Crea un programa que: Demani una temperatura en graus Celsius Pregunti si vol convertir a Fahrenheit o Kelvin Mostri el resultat de la conversió
         public static void Exercici21()
         {
+            Console.Write("Introdueix una temperatura en graus Celsius: ");
+            double celsius = CheckInputs.CheckValidDecimalNumber(); ;
+
+            Console.Write("Vols convertir-la a Fahrenheit (F) o Kelvin (K)? ");
+            char option = char.ToUpper(Console.ReadLine()[0]);
+
+            double convertedTemp;
+
+            switch (option)
+            {
+                case 'F':
+                    convertedTemp = CelsiusToFahrenheit(celsius);
+                    Console.WriteLine($"La temperatura en Fahrenheit és: {convertedTemp} °F");
+                    break;
+
+                case 'K':
+                    convertedTemp = CelsiusToKelvin(celsius);
+                    Console.WriteLine($"La temperatura en Kelvin és: {convertedTemp} K");
+                    break;
+
+                default:
+                    Console.WriteLine("Opció no vàlida. Si us plau, tria 'F' o 'K'.");
+                    break;
+            }
+        }
+        static double CelsiusToFahrenheit(double celsius)
+        {
+            return (celsius * 9 / 5) + 32;
+        }
+
+        static double CelsiusToKelvin(double celsius)
+        {
+            return celsius + 273.15;
         }
         public static void Exercici22()
         {
