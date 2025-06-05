@@ -413,8 +413,34 @@ namespace Dossier2aConvocatoria_SergioVegas
         {
             return celsius + 273.15;
         }
+        /*22. Fes un joc on:
+            L'ordinador generi un número aleatori entre 1 i 50
+            L'usuari hagi d'endevinar-lo
+            El programa digui "Més alt" o "Més baix" fins que l'encerti
+            Mostri el nombre d'intents necessaris*/
         public static void Exercici22()
         {
+            Random random = new Random();
+            int secretNumber = random.Next(1, 51); // Número aleatori entre 1 i 50
+            int attempts = 0;
+            int userGuess = 0;
+
+            Console.WriteLine("Endevina el número entre 1 i 50!");
+
+            while (userGuess != secretNumber)
+            {
+                Console.Write("Introdueix la teva resposta: ");
+
+                userGuess = CheckInputs.CheckValidNumber();
+                attempts++;
+
+                if (userGuess < secretNumber)
+                    Console.WriteLine("Més alt!");
+                else if (userGuess > secretNumber)
+                    Console.WriteLine("Més baix!");
+                else
+                    Console.WriteLine($"Correcte! Has encertat en {attempts} intents.");
+            }
         }
 
     }
