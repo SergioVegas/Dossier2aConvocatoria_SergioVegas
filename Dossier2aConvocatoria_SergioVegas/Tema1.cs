@@ -59,7 +59,7 @@ namespace Dossier2aConvocatoria_SergioVegas
 
             Console.WriteLine(MsgEx7);
 
-            int userNumber = CheckNumbers.CheckValidNumber();
+            int userNumber = CheckInputs.CheckValidNumber();
 
             if (userNumber > 0)
             {
@@ -83,13 +83,13 @@ namespace Dossier2aConvocatoria_SergioVegas
 
             Console.WriteLine(MsgEx8);
 
-            int userQuantityNumbers = CheckNumbers.CheckValidNumber();
+            int userQuantityNumbers = CheckInputs.CheckValidNumber();
             int amount = 0;
 
             for (int i = 0; i < userQuantityNumbers; i++)
             {
                 Console.WriteLine(MsgEx8Number);
-                int userNumb = CheckNumbers.CheckValidNumber();
+                int userNumb = CheckInputs.CheckValidNumber();
                 amount += userNumb;
             }
             Console.WriteLine(MsgAverage, amount / userQuantityNumbers);
