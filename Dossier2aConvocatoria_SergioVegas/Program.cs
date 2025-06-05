@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici11();
+            Exercici12();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -203,8 +203,20 @@ namespace Dossier2aConvocatoria_SergioVegas
            Console.WriteLine(MsgEx11);
            Console.WriteLine( CheckInputs.CheckValidDate().DayOfWeek);
         }
+        /*12. Fes un programa que demani un número i digui si és:
+            Positiu, negatiu o zero
+            Parell o senar*/
         public static void Exercici12()
         {
+            const string MsgEx12 = "Introdueix un numero no decimal.";
+
+            Console.WriteLine(MsgEx12);
+
+            int userNumb = CheckInputs.CheckValidNumber();
+
+            if (userNumb == 0) { Console.WriteLine("El numero introduit es zero"); }
+            else if (userNumb < 0) { Console.WriteLine("El numero introduit es negatiu"); CheckInputs.NumberEvenOrOdd(userNumb); }
+            else { Console.WriteLine("El numero introduit es positiu"); CheckInputs.NumberEvenOrOdd(userNumb); }
         }
         public static void Exercici13()
         {
