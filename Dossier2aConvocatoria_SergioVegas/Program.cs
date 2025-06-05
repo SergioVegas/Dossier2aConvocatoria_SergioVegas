@@ -258,11 +258,30 @@ namespace Dossier2aConvocatoria_SergioVegas
 
             Console.WriteLine($"\nSuma total dels números: {sum}");
         }
+        //15. Crea una funció que rebi un número i retorni el seu quadrat. Demostra el seu funcionament des del Main.
         public static void Exercici15()
         {
+            Console.Write("Introdueix un número: ");
+            int num = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"El quadrat de {num} és {Square(num)}");
+        }
+        static int Square(int number)
+        {
+            return number * number;
         }
         public static void Exercici16()
         {
         }
+        public static void Exercici17()
+        {
+        }
+        public static void Exercici18()
+        {
+        }
+        public static void Exercici19()
+        {
+        }
+
     }
 }

@@ -123,5 +123,6 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
         {
             Console.WriteLine(n % 2 == 0 ? MsgIsEven : MsgIsOdd);
         }
+        
     }
 }
