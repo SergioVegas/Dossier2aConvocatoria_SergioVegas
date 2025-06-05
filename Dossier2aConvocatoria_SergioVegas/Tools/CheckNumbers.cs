@@ -28,6 +28,22 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
             }
             return userNumb;
         }
+        public static double CheckValidDecimalNumber()
+        {
+
+            bool isCorrectFormat = false;
+            double userNumb = 0;
+            while (!isCorrectFormat)
+            {
+                try
+                {
+                    userNumb = int.Parse(Console.ReadLine());
+                    isCorrectFormat = true;
+                }
+                catch (FormatException) { Console.WriteLine(MsgErrorFormat); }
+            }
+            return userNumb;
+        }
         public static int CheckValidNumberNoNegative()
         {
 
@@ -46,6 +62,29 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
                         Console.WriteLine(MsgErrorNegative);
                     }
                    
+                }
+                catch (FormatException) { Console.WriteLine(MsgErrorFormat); }
+            }
+            return userNumb;
+        }
+        public static double CheckValidDecimalNumberNoNegative()
+        {
+
+            bool isCorrectFormat = false;
+            double userNumb = 0;
+
+            while (!isCorrectFormat)
+            {
+                try
+                {
+                    userNumb = int.Parse(Console.ReadLine());
+                    isCorrectFormat = true;
+                    if (userNumb <= 0)
+                    {
+                        isCorrectFormat = false;
+                        Console.WriteLine(MsgErrorNegative);
+                    }
+
                 }
                 catch (FormatException) { Console.WriteLine(MsgErrorFormat); }
             }

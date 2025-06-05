@@ -62,7 +62,55 @@ namespace Dossier2aConvocatoria_SergioVegas
         }
         public static void Exercici7()
         {
+            int option;
+            do
+            {
+                Console.WriteLine("\nMenú:");
+                Console.WriteLine("1. Calcular àrea d’un rectangle");
+                Console.WriteLine("2. Mostrar si un any és de traspàs");
+                Console.WriteLine("3. Sortir del programa");
+                Console.Write("Selecciona una opció: ");
+
+                option = CheckNumbers.CheckValidNumberNoNegative();
+
+                switch (option)
+                {
+                    case 1:
+                        CalculateRectangleArea();
+                        break;
+                    case 2:
+                        CheckLeapYear();
+                        break;
+                    case 3:
+                        Console.WriteLine("Has sortit del programa.");
+                        break;
+                    default:
+                        Console.WriteLine("Opció no vàlida! Torna-ho a intentar.");
+                        break;
+                }
+            } while (option != 3);
         }
+        static void CalculateRectangleArea()
+        {
+            Console.Write("Introdueix la base del rectangle: ");
+            double baseRectangle = CheckNumbers.CheckValidDecimalNumberNoNegative();
+
+            Console.Write("Introdueix l'altura del rectangle: ");
+            double heightRectangle = CheckNumbers.CheckValidDecimalNumberNoNegative();
+
+            double area = baseRectangle * heightRectangle;
+            Console.WriteLine($"L'àrea del rectangle és: {area}");
+        }
+
+        static void CheckLeapYear()
+        {
+            Console.Write("Introdueix un any: ");
+            int year = CheckNumbers.CheckValidNumberNoNegative(); ;
+
+            bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+            Console.WriteLine(isLeapYear ? $"{year} és un any de traspàs." : $"{year} no és un any de traspàs.");
+        }
+
         public static void Exercici8()
         {
         }
