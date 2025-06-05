@@ -218,10 +218,25 @@ namespace Dossier2aConvocatoria_SergioVegas
             else if (userNumb < 0) { Console.WriteLine("El numero introduit es negatiu"); CheckInputs.NumberEvenOrOdd(userNumb); }
             else { Console.WriteLine("El numero introduit es positiu"); CheckInputs.NumberEvenOrOdd(userNumb); }
         }
+        //13. Demana un número a l'usuari i mostra la seva taula de multiplicar del 1 al 10.
         public static void Exercici13()
         {
+            Console.Write("Introdueix un número: ");
+            int num = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Taula de multiplicar del {num}:");
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"{num} × {i} = {num * i}");
+            }
         }
         public static void Exercici14()
+        {
+        }
+        public static void Exercici15()
+        {
+        }
+        public static void Exercici16()
         {
         }
     }
