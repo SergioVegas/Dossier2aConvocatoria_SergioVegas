@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici9();
+            Exercici10();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -173,8 +173,28 @@ namespace Dossier2aConvocatoria_SergioVegas
 
             return hasUpper && hasLower && hasDigit; ; 
         }
+        //10.Comprova que una cadena tingui 8 dígits seguits d’una lletra (no cal validar la lletra final).
         public static void Exercici10()
         {
+            const string MsgEx10 = "Escriu una cadena que tingui 8 dígits seguits d’una lletra.";
+
+            Console.WriteLine(MsgEx10);
+            string input = Console.ReadLine();
+
+            Console.WriteLine(ValidateFormat(input) ? "Correcte!": ""); 
+        }
+        static bool ValidateFormat(string input)
+        {
+            const string MsgIncorrectLenght = "La cadena ha de trindre 8 digits més una lletra.";
+            const string MsgIncorrectDigit = "La cadena ha de trindre 8 numeros!.";
+
+            if (input.Length != 9) { Console.WriteLine(MsgIncorrectLenght); return false; } // La cadena ha de tenir 9 caràcters en total
+
+            for (int i = 0; i < 8; i++) // Comprova els primers 8 caràcters
+            {
+                if (!char.IsDigit(input[i])) { Console.WriteLine(MsgIncorrectDigit); return false; }
+            }
+            return true; 
         }
         public static void Exercici11()
         {
