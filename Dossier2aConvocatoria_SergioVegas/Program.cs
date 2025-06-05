@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici19();
+            Exercici25();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -450,7 +450,56 @@ namespace Dossier2aConvocatoria_SergioVegas
         //24. Implementa i testeja amb XUnit una funció IsOdd(int num) que retorni true si és senar i false en cas contrari.
         public static bool IsOdd(int num)
         {
-            return num % 2 != 0; 
+            return num % 2 != 0;
+        }
+        //25. Millora el codi següent aplicant patrons de Clean Code:
+        /* int[] arr = { 3, 4, 1 };
+         for (int i = 0; i < arr.Length; i++)
+         {
+             for (int j = i + 1; j < arr.Length; j++)
+             {
+                 if (arr[i] > arr[j])
+                 {
+                     int tmp = arr[i];
+                     arr[i] = arr[j];
+                     arr[j] = tmp;
+                 }
+             }
+         }
+         Console.WriteLine(string.Join(",", arr));*/
+        public static void Exercici25()
+        {
+            int[] arrayNumbers = { 3, 4, 1 };
+
+            for (int i = 0; i < arrayNumbers.Length; i++)
+            {
+                for (int j = i + 1; j < arrayNumbers.Length; j++)
+                {
+                    if (arrayNumbers[i] > arrayNumbers[j]) //Nomes si el numero enmagatzemat a la posicio i és més gran que el que esta a la j
+                    {
+                        int organizer = arrayNumbers[i]; //Utilitzem aquesta variable per organitzar l'array de més petit a més gran.
+
+                        arrayNumbers[i] = arrayNumbers[j];
+                        arrayNumbers[j] = organizer;
+                    }
+                }
+            }
+            Console.WriteLine(string.Join(",", arrayNumbers));
+        }
+        /*26. Reescriu aquest fragment donant noms significatius i afegint comentaris útil
+            int x = 5;
+            if (x % 2 == 0) Console.WriteLine("E");
+            else Console.WriteLine("O");*/
+
+        public static void Exercici26()
+        {
+            //Missatges en constants per millorar lectura del codi. Ademés donem noms entedibles per si mateixos.
+            const string MsgIsEven = "Aquest numero és parell";
+            const string MsgIsOdd = "Aquest numero és impar";
+
+            int number = 5;
+
+            Console.WriteLine(number % 2 == 0 ? MsgIsEven : MsgIsOdd); //Utilitzem un ternari per fer el codi més llegible.
         }
     }
 }
