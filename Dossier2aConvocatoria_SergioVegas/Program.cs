@@ -1,10 +1,15 @@
-﻿namespace Dossier2aConvocatoria_SergioVegas
+﻿using Dossier2aConvocatoria_SergioVegas.Tools;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Dossier2aConvocatoria_SergioVegas
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Tema1.MenuT1();
         }
+        
     }
 }
