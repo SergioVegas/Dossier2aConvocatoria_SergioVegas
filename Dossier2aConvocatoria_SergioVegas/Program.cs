@@ -110,9 +110,35 @@ namespace Dossier2aConvocatoria_SergioVegas
             bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
             Console.WriteLine(isLeapYear ? $"{year} és un any de traspàs." : $"{year} no és un any de traspàs.");
         }
-
+        // 8. Implementa un programa que demani dos nombres per teclat, faci la divisió i capturi possibles excepcions (per ex. divisió entre 0 o format invàlid).
         public static void Exercici8()
         {
+            try
+            {
+                Console.Write("Introdueix el primer nombre: ");
+                double userNumb1 = double.Parse(Console.ReadLine());
+
+                Console.Write("Introdueix el segon nombre: ");
+                double userNumb2 = double.Parse(Console.ReadLine());
+
+                if (userNumb2 == 0)
+                    throw new DivideByZeroException("No es pot dividir per zero!");
+
+                double result = userNumb1 / userNumb2;
+                Console.WriteLine($"El resultat de la divisió és: {result}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Has d'introduir un nombre vàlid.");
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"S'ha produït un error inesperat: {ex.Message}");
+            }
         }
         public static void Exercici9()
         {
