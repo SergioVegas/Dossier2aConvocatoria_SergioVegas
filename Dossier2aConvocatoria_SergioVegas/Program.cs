@@ -351,8 +351,30 @@ namespace Dossier2aConvocatoria_SergioVegas
 
             return sum;
         }
+        /*20. Demana 8 números i mostra:
+            El número més gran
+            El número més petit
+            La mitjana*/
         public static void Exercici20()
         {
+            const int NumCount = 8;
+            int[] numbers = new int[NumCount];
+
+            Console.WriteLine("Introdueix 8 números:");
+
+            for (int i = 0; i < NumCount; i++)
+            {
+                Console.Write($"Número {i + 1}: ");
+                numbers[i] = CheckInputs.CheckValidNumber();
+            }
+
+            int maxNumber = numbers.Max();
+            int minNumber = numbers.Min();
+            double average = numbers.Average();
+
+            Console.WriteLine($"El número més gran és: {maxNumber}");
+            Console.WriteLine($"El número més petit és: {minNumber}");
+            Console.WriteLine($"La mitjana dels números és: {average}");
         }
         public static void Exercici21()
         {
