@@ -262,7 +262,7 @@ namespace Dossier2aConvocatoria_SergioVegas
         public static void Exercici15()
         {
             Console.Write("Introdueix un número: ");
-            int num = int.Parse(Console.ReadLine());
+            int num = CheckInputs.CheckValidNumber();
 
             Console.WriteLine($"El quadrat de {num} és {Square(num)}");
         }
