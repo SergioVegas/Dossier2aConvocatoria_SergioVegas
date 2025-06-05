@@ -7,7 +7,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici5();
+            Exercici6();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -24,22 +24,50 @@ namespace Dossier2aConvocatoria_SergioVegas
             {
                 result *= i;
             }
-            Console.WriteLine(MsgResult,result);
-            Console.WriteLine($"{userNumb} {(NumberIsPrime(userNumb) ? "és un nombre primer." : "no és un nombre primer.")}");
+            Console.WriteLine(MsgResult, result);
+            Console.WriteLine($"{userNumb} {(CheckNumbers.NumberIsPrime(userNumb) ? "és un nombre primer." : "no és un nombre primer.")}");
         }
         public static int FactorialRecursiu(int userNumb) //Recursiva
         {
             if (userNumb <= 1) return 1;
             return userNumb * FactorialRecursiu(userNumb - 1);
         }
-        static bool NumberIsPrime(int n)
+       
+        //6. Demana 10 números a l’usuari, desa'ls en un array, mostra la mitjana i quants valors són parells i quants no ho són.
+        public static void Exercici6()
         {
-            if (n < 2) return false;
-            for (int i = 2; i <= Math.Sqrt(n); i++)
+            const string MsgEx5 = "Introdueix 10 numeros i faré la mitjana.";
+            const int NumberCount = 10;
+            int[] numbers = new int[NumberCount];
+            int sum = 0, evenCount = 0, oddCount = 0;
+
+            Console.WriteLine(MsgEx5);
+
+            for (int i = 0; i < NumberCount; i++)
             {
-                if (n % i == 0) return false;
+                Console.Write($"Numero {i + 1}: ");
+                numbers[i] = CheckNumbers.CheckValidNumber();
+                sum += numbers[i];
+
+                if (numbers[i] % 2 == 0)
+                    evenCount++;
+                else
+                    oddCount++;
             }
-            return true;
+            double average = (double)sum / NumberCount;
+
+            Console.WriteLine($"La mitja es: {average}");
+            Console.WriteLine($"Hi han {evenCount} numeros parells");
+            Console.WriteLine($"Hi han {oddCount} numeros senars");
+        }
+        public static void Exercici7()
+        {
+        }
+        public static void Exercici8()
+        {
+        }
+        public static void Exercici9()
+        {
         }
     }
 }

@@ -10,6 +10,8 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
     {
         const string MsgErrorFormat = "Format incorrecte. Introdueix un numero.";
         const string MsgErrorNegative= "El numero no pot ser menor a 0.";
+        const string MsgIsOdd = "El numero és senar.";
+        const string MsgIsEven = "El numero és parell";
         public static int CheckValidNumber()
         {
             
@@ -48,6 +50,19 @@ namespace Dossier2aConvocatoria_SergioVegas.Tools
                 catch (FormatException) { Console.WriteLine(MsgErrorFormat); }
             }
             return userNumb;
+        }
+        public static bool NumberIsPrime(int n)
+        {
+            if (n < 2) return false;
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0) return false;
+            }
+            return true;
+        }
+        public static void NumberEvenOrOdd(int n)
+        {
+            Console.WriteLine(n % 2 == 0 ? MsgIsEven : MsgIsOdd);
         }
     }
 }
