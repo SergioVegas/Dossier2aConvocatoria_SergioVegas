@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici12();
+            Exercici14();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -222,7 +222,7 @@ namespace Dossier2aConvocatoria_SergioVegas
         public static void Exercici13()
         {
             Console.Write("Introdueix un número: ");
-            int num = int.Parse(Console.ReadLine());
+            int num = CheckInputs.CheckValidNumberNoNegative();
 
             Console.WriteLine($"Taula de multiplicar del {num}:");
             for (int i = 1; i <= 10; i++)
@@ -230,8 +230,33 @@ namespace Dossier2aConvocatoria_SergioVegas
                 Console.WriteLine($"{num} × {i} = {num * i}");
             }
         }
+        /*14. Crea un programa que:
+            Demani 5 números i els guardi en un array
+            Mostri tots els números introduïts
+            Calculi i mostri la suma de tots els números*/
         public static void Exercici14()
         {
+            const string MsgEx14 = "Introdueix 5 numeros i fare la suma de tots.";
+            const int NumCount = 5;
+            int[] numbers = new int[NumCount];
+            int sum = 0;
+
+            Console.WriteLine(MsgEx14);
+
+            for (int i = 0; i < NumCount; i++)
+            {
+                Console.Write($"Número {i + 1}: ");
+                numbers[i] = CheckInputs.CheckValidNumber();
+                sum += numbers[i];
+            }
+
+            Console.WriteLine("\nNúmeros introduïts:");
+            foreach (int num in numbers)
+            {
+                Console.Write($"{num} ");
+            }
+
+            Console.WriteLine($"\nSuma total dels números: {sum}");
         }
         public static void Exercici15()
         {
