@@ -8,7 +8,7 @@ namespace Dossier2aConvocatoria_SergioVegas
     {
         static void Main(string[] args)
         {
-            Exercici10();
+            Exercici11();
         }
         // 5.  Implementa un programa que retorni per pantalla el factorial d’un número introduït per teclat i si aquest és primer o no (de manera iterativa i de manera recursiva).
         public static void Exercici5()
@@ -18,7 +18,7 @@ namespace Dossier2aConvocatoria_SergioVegas
 
             Console.WriteLine(MsgEx5);
 
-            int userNumb = CheckNumbers.CheckValidNumberNoNegative();
+            int userNumb = CheckInputs.CheckValidNumberNoNegative();
             int result = userNumb;
 
             for (int i = 1; i < userNumb; i++)//Iterativa
@@ -26,7 +26,7 @@ namespace Dossier2aConvocatoria_SergioVegas
                 result *= i;
             }
             Console.WriteLine(MsgResult, result);
-            Console.WriteLine($"{userNumb} {(CheckNumbers.NumberIsPrime(userNumb) ? "és un nombre primer." : "no és un nombre primer.")}");
+            Console.WriteLine($"{userNumb} {(CheckInputs.NumberIsPrime(userNumb) ? "és un nombre primer." : "no és un nombre primer.")}");
         }
         public static int FactorialRecursiu(int userNumb) //Recursiva
         {
@@ -47,7 +47,7 @@ namespace Dossier2aConvocatoria_SergioVegas
             for (int i = 0; i < NumberCount; i++)
             {
                 Console.Write($"Numero {i + 1}: ");
-                numbers[i] = CheckNumbers.CheckValidNumber();
+                numbers[i] = CheckInputs.CheckValidNumber();
                 sum += numbers[i];
 
                 if (numbers[i] % 2 == 0)
@@ -72,7 +72,7 @@ namespace Dossier2aConvocatoria_SergioVegas
                 Console.WriteLine("3. Sortir del programa");
                 Console.Write("Selecciona una opció: ");
 
-                option = CheckNumbers.CheckValidNumberNoNegative();
+                option = CheckInputs.CheckValidNumberNoNegative();
 
                 switch (option)
                 {
@@ -94,10 +94,10 @@ namespace Dossier2aConvocatoria_SergioVegas
         static void CalculateRectangleArea()
         {
             Console.Write("Introdueix la base del rectangle: ");
-            double baseRectangle = CheckNumbers.CheckValidDecimalNumberNoNegative();
+            double baseRectangle = CheckInputs.CheckValidDecimalNumberNoNegative();
 
             Console.Write("Introdueix l'altura del rectangle: ");
-            double heightRectangle = CheckNumbers.CheckValidDecimalNumberNoNegative();
+            double heightRectangle = CheckInputs.CheckValidDecimalNumberNoNegative();
 
             double area = baseRectangle * heightRectangle;
             Console.WriteLine($"L'àrea del rectangle és: {area}");
@@ -106,7 +106,7 @@ namespace Dossier2aConvocatoria_SergioVegas
         static void CheckLeapYear()
         {
             Console.Write("Introdueix un any: ");
-            int year = CheckNumbers.CheckValidNumberNoNegative(); ;
+            int year = CheckInputs.CheckValidNumberNoNegative(); ;
 
             bool isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
             Console.WriteLine(isLeapYear ? $"{year} és un any de traspàs." : $"{year} no és un any de traspàs.");
@@ -196,7 +196,20 @@ namespace Dossier2aConvocatoria_SergioVegas
             }
             return true; 
         }
+        //11. Demana a l’usuari una data en format dd/MM/yyyy. Mostra si és una data vàlida i en quin dia de la setmana cau.
         public static void Exercici11()
+        {
+           const string MsgEx11 = "Introdueix una data en format dd/MM/yyyy i et dire quin dia de la setmana és";
+           Console.WriteLine(MsgEx11);
+           Console.WriteLine( CheckInputs.CheckValidDate().DayOfWeek);
+        }
+        public static void Exercici12()
+        {
+        }
+        public static void Exercici13()
+        {
+        }
+        public static void Exercici14()
         {
         }
     }
