@@ -1,4 +1,4 @@
-﻿using static Dossier2aConvocatoria_SergioVegas.Program;
+﻿using static Dossier2aConvocatoria_SergioVegas.Tema2;
 
 namespace Exercici24
 {

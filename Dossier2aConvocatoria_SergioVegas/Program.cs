@@ -40,5 +40,4 @@ namespace Dossier2aConvocatoria_SergioVegas
             } while (option != 0);
         }
     }
-    }
 }
