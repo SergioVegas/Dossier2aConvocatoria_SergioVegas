@@ -447,5 +447,10 @@ namespace Dossier2aConvocatoria_SergioVegas
         {
             return num % 2 == 0;
         }
+        //24. Implementa i testeja amb XUnit una funció IsOdd(int num) que retorni true si és senar i false en cas contrari.
+        public static bool IsOdd(int num)
+        {
+            return num % 2 != 0; 
+        }
     }
 }
